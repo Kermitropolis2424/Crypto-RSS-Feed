@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto News Feed - Live Cryptocurrency News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="crypto-icon">₿</span>
+                    Crypto News Feed
+                    <span class="crypto-icon">Ξ</span>
+                </h1>
+                <p class="subtitle">Live cryptocurrency news aggregator • Auto-updating every 5 minutes</p>
+                <div class="stats">
+                    <span class="stat">
+                        <span class="stat-label">Articles:</span>
+                        <span id="article-count">0</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-label">Last Updated:</span>
+                        <span id="last-updated">Never</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search articles..." class="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-source="all">All Sources</button>
+                <button class="filter-btn" data-source="CoinDesk" style="--source-color: #F7931A">CoinDesk</button>
+                <button class="filter-btn" data-source="Cointelegraph" style="--source-color: #00D4AA">Cointelegraph</button>
+                <button class="filter-btn" data-source="CryptoSlate" style="--source-color: #6B46C1">CryptoSlate</button>
+                <button class="filter-btn" data-source="Bitcoin.com" style="--source-color: #4CAF50">Bitcoin.com</button>
+                <button class="filter-btn" data-source="NewsBTC" style="--source-color: #FF9800">NewsBTC</button>
+                <button class="filter-btn" data-source="CryptoPotato" style="--source-color: #E91E63">CryptoPotato</button>
+                <button class="filter-btn" data-source="U.Today" style="--source-color: #2196F3">U.Today</button>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-container" class="loading-container">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Fetching latest crypto news...</p>
+        </div>
+
+        <!-- News Grid -->
+        <main class="news-container">
+            <div id="news-grid" class="news-grid">
+                <!-- Articles will be dynamically inserted here -->
+            </div>
+        </main>
+
+        <!-- Update Notification -->
+        <div id="update-notification" class="update-notification">
+            <span class="notification-icon">🔄</span>
+            <span class="notification-text">New articles loaded!</span>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
